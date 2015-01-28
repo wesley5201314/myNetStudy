@@ -1,0 +1,160 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Master.master.cs" Inherits="Master" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link href="css.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<form id="Form1" runat="server">
+ <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+<div id="top">
+<div class="title"><asp:HyperLink ID="sitename" runat="server">HyperLink</asp:HyperLink></div>
+<div class="desc"><asp:Label ID="sitedesc" runat="server" Text="Label"></asp:Label></div>
+</div>
+<div id="nav">
+<p>
+<a href="Default.aspx">首页</a>
+<a href="GuestBook.aspx">留言</a>
+</p>
+</div>
+<div id="main">
+<asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">     
+</asp:ContentPlaceHolder></div> 
+<div id="side">
+ <div class="m">
+   <h3>博客档案</h3>
+     <ul>
+     <asp:Image ID="Image1" runat="server" CssClass="headimg" />
+     <li>个人简介：</li>
+     <li style="margin-left:20px"><asp:Label ID="jianjie" runat="server"></asp:Label></li>
+     <li><a target="_blank" href="http://wpa.qq.com/msgrd?V=1&Uin=81913221"><img alt="Q我" src='http://wpa.qq.com/pa?p=1:81913221:1'/></a>81913221qq.com</li>
+     <li>日志总数：<asp:Label ID="Label1" runat="server" Text="0"></asp:Label></li>
+     <li>在线人数：<asp:Label ID="Label2" runat="server" Text="0"></asp:Label></li>
+     <li>总浏览量：<asp:Label ID="Label3" runat="server" Text="0"></asp:Label></li>
+     </ul>
+ </div>
+ <div class="m">
+   <h3>栏目分类</h3>
+    <ul>
+        <asp:ListView ID="ListChennel" runat="server" 
+            onprerender="ListChennel_PreRender">
+        <ItemTemplate>
+        <li>·<a href='Chennel.aspx?id=<%# Eval("id") %>'><%# Eval("ch_name") %></a></li>
+        </ItemTemplate>
+        <LayoutTemplate>
+            <span ID="itemPlaceholder" runat="server" />
+        </LayoutTemplate>
+        </asp:ListView>
+    </ul>
+ </div>
+<div class="m">
+   <div class="ali">
+   <asp:UpdatePanel ID="UpdatePanel1" runat="server" >
+   <ContentTemplate>
+   <asp:Calendar ID="Calendar1" runat="server" Width="100%"></asp:Calendar>
+   </ContentTemplate>
+   </asp:UpdatePanel>
+   </div>
+ </div>
+ <div class="m">
+ <div class="ali">
+ <asp:TextBox ID="Search" runat="server"></asp:TextBox>
+     <asp:DropDownList ID="SearchDrop" runat="server" Width="20%" Height="20px">
+         <asp:ListItem Value="0">标题</asp:ListItem>
+         <asp:ListItem Value="1">内容</asp:ListItem>
+     </asp:DropDownList><asp:Button ID="Searchbtn" runat="server" Text="搜索" 
+         Width="15%" Height="20px" onclick="Searchbtn_Click"/>
+ </div>
+ </div>
+<div class="m">
+<h3>热门文章</h3>
+    <ul>
+        <asp:ListView ID="ListHot" runat="server" 
+            onprerender="ListHot_PreRender">
+        <ItemTemplate>
+        <li>·<a href='Show.aspx?id=<%# Eval("id") %>' title='<%# Eval("ct_title")%>'><%# myli.GetSubString(Eval("ct_title").ToString(),20)%></a></li>
+        </ItemTemplate>
+        <LayoutTemplate>
+            <span ID="itemPlaceholder" runat="server"/>
+        </LayoutTemplate>
+        </asp:ListView>
+    </ul>
+ </div>
+<div class="m">
+   <h3>最新留言</h3>
+    <ul>
+        <asp:ListView ID="ListGuest" runat="server" 
+            onprerender="ListGuest_PreRender">
+        <ItemTemplate>
+        <li><strong><%# Eval("name")%>：</strong></li>
+        <li style="overflow:hidden; color:#004C9A;margin-left:20px"><%# myli.GetSubString(Eval("content").ToString(),18)%></li>
+        </ItemTemplate>
+        <LayoutTemplate>
+            <span ID="itemPlaceholder" runat="server"/>
+        </LayoutTemplate>
+        </asp:ListView>
+        <li><a href="GuestBook.aspx" style="margin-left:200px">More</a></li>
+    </ul>
+ </div>
+<div class="m">
+   <h3>友情连接</h3>
+<div id="simg" style="height:120px; overflow:hidden;" onmouseover="stop()" onmouseout="start()"> 
+<div id="simg1">
+     <ul style="text-align:center">
+        <asp:ListView ID="ListLink" runat="server" 
+            onprerender="ListLink_PreRender">
+        <ItemTemplate>
+        <li><a href='<%# Eval("siteurl")%>' target="_blank"><%# Eval("sitename")%></a></li>
+        </ItemTemplate>
+        <LayoutTemplate>
+            <span ID="itemPlaceholder" runat="server"/>
+        </LayoutTemplate>
+        </asp:ListView>
+         <asp:ListView ID="ListLogo" runat="server">
+              <ItemTemplate>
+              <li><a href='<%# Eval("siteurl")%>' target="_blank"><img src='<%# Eval("logo")%>' alt='<%# Eval("sitename") %>' /></a></li>
+              </ItemTemplate>
+             <LayoutTemplate>
+             <span ID="itemPlaceholder" runat="server"/>
+              </LayoutTemplate>
+         </asp:ListView>
+    </ul>
+</div>
+<div id="simg2"></div></div>
+</div></div>
+<h6></h6>
+<div id="foot">
+<ul>
+<li>Powered By SwBlog CopyRight 2014  邹雨欣 </li>
+<li>特别鸣谢：南阳理工学院软件学院</li>
+</ul>
+</div>
+</form>
+</body>
+</html>
+<script language="javascript" type="text/javascript">
+<!--
+var tm = null;
+var simg = document.getElementById("simg");
+var simg1 = document.getElementById("simg1");
+var simg2 = document.getElementById("simg2");
+function newsScroll() {
+if(simg2.offsetTop - simg.scrollTop<=0)
+simg.scrollTop -= simg1.offsetHeight;
+else
+simg.scrollTop++;
+}
+function stop()
+{
+clearInterval(tm);
+}
+function start()
+{
+tm = setInterval("newsScroll()",40);
+}
+simg2.innerHTML = simg1.innerHTML;
+tm = setInterval("newsScroll()",40);
+-->
+</script>

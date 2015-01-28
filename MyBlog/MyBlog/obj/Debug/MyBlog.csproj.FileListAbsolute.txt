@@ -1,0 +1,6 @@
+E:\Workspace\net\MyBlog\MyBlog\bin\MyBlog.dll
+E:\Workspace\net\MyBlog\MyBlog\bin\MyBlog.pdb
+E:\Workspace\net\MyBlog\MyBlog\obj\Debug\MyBlog.dll
+E:\Workspace\net\MyBlog\MyBlog\obj\Debug\MyBlog.pdb
+E:\Workspace\net\MyBlog\MyBlog\obj\Debug\MyBlog.csprojResolveAssemblyReference.cache
+E:\Workspace\net\MyBlog\MyBlog\obj\Debug\MyBlog.dll.licenses

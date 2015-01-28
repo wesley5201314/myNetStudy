@@ -1,0 +1,621 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DA2D1720-E985-46D4-9987-0515EC0E559B}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MyBlog</RootNamespace>
+    <AssemblyName>MyBlog</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="App_Licenses, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\App_Licenses.dll</HintPath>
+    </Reference>
+    <Reference Include="FreeTextBox, Version=3.1.6.34851, Culture=neutral, PublicKeyToken=5962a4e684a48b87, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\FreeTextBox.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="URLRewriter, Version=1.0.3245.22219, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\URLRewriter.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="about.aspx" />
+    <Content Include="admin\admin_edit.aspx" />
+    <Content Include="admin\admin_left.aspx" />
+    <Content Include="admin\admin_logout.aspx" />
+    <Content Include="admin\admin_main.aspx" />
+    <Content Include="admin\admin_setup.aspx" />
+    <Content Include="admin\admin_top.aspx" />
+    <Content Include="admin\Css_Left.css" />
+    <Content Include="admin\edit\admin_edit.aspx" />
+    <Content Include="admin\edit\admin_edit_delete.aspx" />
+    <Content Include="admin\edit\admin_edit_edit.aspx" />
+    <Content Include="admin\edit\edit_add.aspx" />
+    <Content Include="admin\edit\edit_add_type.aspx" />
+    <Content Include="admin\edit\edit_type.aspx" />
+    <Content Include="admin\edit\edit_type_delete.aspx" />
+    <Content Include="admin\edit\edit_type_edit.aspx" />
+    <Content Include="admin\ftb.imagegallery.aspx" />
+    <Content Include="admin\images\admin_left_1.gif" />
+    <Content Include="admin\images\admin_left_12.gif" />
+    <Content Include="admin\images\admin_left_13.gif" />
+    <Content Include="admin\images\admin_left_2.gif" />
+    <Content Include="admin\images\admin_left_3.gif" />
+    <Content Include="admin\images\admin_left_4.gif" />
+    <Content Include="admin\images\admin_left_5.gif" />
+    <Content Include="admin\images\admin_left_6.gif" />
+    <Content Include="admin\images\admin_left_7.gif" />
+    <Content Include="admin\images\admin_left_8.gif" />
+    <Content Include="admin\images\admin_left_9.gif" />
+    <Content Include="admin\images\admin_top_bg.gif" />
+    <Content Include="admin\images\admin_top_close.gif" />
+    <Content Include="admin\images\admin_top_icon_1.gif" />
+    <Content Include="admin\images\admin_top_icon_5.gif" />
+    <Content Include="admin\images\admin_top_open.gif" />
+    <Content Include="admin\images\aleft.gif" />
+    <Content Include="admin\images\close.gif" />
+    <Content Include="admin\images\copy.gif" />
+    <Content Include="admin\images\cut.gif" />
+    <Content Include="admin\images\del.gif" />
+    <Content Include="admin\images\edit.gif" />
+    <Content Include="admin\images\folder.gif" />
+    <Content Include="admin\images\folder1.jpg" />
+    <Content Include="admin\images\lg1_bg.gif" />
+    <Content Include="admin\images\lg2_bg.gif" />
+    <Content Include="admin\images\lg_bg.gif" />
+    <Content Include="admin\images\menudown.gif" />
+    <Content Include="admin\images\menuup.gif" />
+    <Content Include="admin\images\menuup1.gif" />
+    <Content Include="admin\images\open.gif" />
+    <Content Include="admin\images\paste.gif" />
+    <Content Include="admin\images\refresh.gif" />
+    <Content Include="admin\images\rename.gif" />
+    <Content Include="admin\images\title.gif" />
+    <Content Include="admin\images\title_bg_hide.gif" />
+    <Content Include="admin\images\title_bg_quit.gif" />
+    <Content Include="admin\images\title_bg_show.gif" />
+    <Content Include="admin\images\topbg1.gif" />
+    <Content Include="admin\index.aspx" />
+    <Content Include="admin\login.aspx" />
+    <Content Include="admin\page\page_add.aspx" />
+    <Content Include="admin\page\page_edit.aspx" />
+    <Content Include="admin\photo\admin_photo.aspx" />
+    <Content Include="admin\photo\admin_photo_delete.aspx" />
+    <Content Include="admin\photo\admin_photo_edit.aspx" />
+    <Content Include="admin\photo\photo_add.aspx" />
+    <Content Include="admin\photo\photo_add_type.aspx" />
+    <Content Include="admin\photo\photo_edit_type.aspx" />
+    <Content Include="admin\photo\photo_type_delete.aspx" />
+    <Content Include="admin\photo\photo_type_edit.aspx" />
+    <Content Include="App_Data\db.mdb" />
+    <Content Include="ascx\about.ascx" />
+    <Content Include="ascx\count.ascx" />
+    <Content Include="ascx\edit_show.ascx" />
+    <Content Include="ascx\edit_type.ascx" />
+    <Content Include="ascx\edit_wz.ascx" />
+    <Content Include="ascx\footer.ascx" />
+    <Content Include="ascx\guest.ascx" />
+    <Content Include="ascx\guest_post.ascx" />
+    <Content Include="ascx\newshow.ascx" />
+    <Content Include="ascx\photo_show.ascx" />
+    <Content Include="ascx\photo_title.ascx" />
+    <Content Include="ascx\photo_type.ascx" />
+    <Content Include="ascx\selectpage.ascx" />
+    <Content Include="ascx\selete_title.ascx" />
+    <Content Include="ascx\time.ascx" />
+    <Content Include="css\lightbox.css" />
+    <Content Include="css\style.css" />
+    <Content Include="edit.aspx" />
+    <Content Include="edit_show.aspx" />
+    <Content Include="error.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="guest.aspx" />
+    <Content Include="guest_add.aspx" />
+    <Content Include="images\1.bmp" />
+    <Content Include="images\3.bmp" />
+    <Content Include="images\arrow.gif" />
+    <Content Include="images\body_bg.jpg" />
+    <Content Include="images\bullet.gif" />
+    <Content Include="images\close.gif" />
+    <Content Include="images\closelabel.gif" />
+    <Content Include="images\color1.gif" />
+    <Content Include="images\color2.gif" />
+    <Content Include="images\container.jpg" />
+    <Content Include="images\Copy of hover.jpg" />
+    <Content Include="images\download-icon.gif" />
+    <Content Include="images\footer.jpg" />
+    <Content Include="images\h3.jpg" />
+    <Content Include="images\hover.jpg" />
+    <Content Include="images\linkpanel.jpg" />
+    <Content Include="images\linkpanel_hover.jpg" />
+    <Content Include="images\loading.gif" />
+    <Content Include="images\nextlabel.gif" />
+    <Content Include="images\prevlabel.gif" />
+    <Content Include="images\sub_header.jpg" />
+    <Content Include="images\top.jpg" />
+    <Content Include="index.aspx" />
+    <Content Include="js\builder.js" />
+    <Content Include="js\effects.js" />
+    <Content Include="js\lightbox.js" />
+    <Content Include="js\prototype.js" />
+    <Content Include="js\scriptaculous.js" />
+    <Content Include="photo.aspx" />
+    <Content Include="sc.aspx" />
+    <Content Include="updata\20081211204112.jpg" />
+    <Content Include="updata\20081215191100.jpg" />
+    <Content Include="updata\20081215193351.jpg" />
+    <Content Include="updata\20081216120450.gif" />
+    <Content Include="updata\small\20081211204112.jpg" />
+    <Content Include="updata\small\20081215191100.jpg" />
+    <Content Include="updata\small\20081215193351.jpg" />
+    <Content Include="updata\small\20081216120450.gif" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="about.aspx.cs">
+      <DependentUpon>about.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="about.aspx.designer.cs">
+      <DependentUpon>about.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\admin_edit.aspx.cs">
+      <DependentUpon>admin_edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\admin_edit.aspx.designer.cs">
+      <DependentUpon>admin_edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\admin_left.aspx.cs">
+      <DependentUpon>admin_left.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\admin_left.aspx.designer.cs">
+      <DependentUpon>admin_left.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\admin_logout.aspx.cs">
+      <DependentUpon>admin_logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\admin_logout.aspx.designer.cs">
+      <DependentUpon>admin_logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\admin_main.aspx.cs">
+      <DependentUpon>admin_main.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\admin_main.aspx.designer.cs">
+      <DependentUpon>admin_main.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\admin_setup.aspx.cs">
+      <DependentUpon>admin_setup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\admin_setup.aspx.designer.cs">
+      <DependentUpon>admin_setup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\admin_top.aspx.cs">
+      <DependentUpon>admin_top.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\admin_top.aspx.designer.cs">
+      <DependentUpon>admin_top.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\edit\admin_edit.aspx.cs">
+      <DependentUpon>admin_edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\edit\admin_edit.aspx.designer.cs">
+      <DependentUpon>admin_edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\edit\admin_edit_delete.aspx.cs">
+      <DependentUpon>admin_edit_delete.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\edit\admin_edit_delete.aspx.designer.cs">
+      <DependentUpon>admin_edit_delete.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\edit\admin_edit_edit.aspx.cs">
+      <DependentUpon>admin_edit_edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\edit\admin_edit_edit.aspx.designer.cs">
+      <DependentUpon>admin_edit_edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\edit\edit_add.aspx.cs">
+      <DependentUpon>edit_add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\edit\edit_add.aspx.designer.cs">
+      <DependentUpon>edit_add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\edit\edit_add_type.aspx.cs">
+      <DependentUpon>edit_add_type.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\edit\edit_add_type.aspx.designer.cs">
+      <DependentUpon>edit_add_type.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\edit\edit_type.aspx.cs">
+      <DependentUpon>edit_type.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\edit\edit_type.aspx.designer.cs">
+      <DependentUpon>edit_type.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\edit\edit_type_delete.aspx.cs">
+      <DependentUpon>edit_type_delete.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\edit\edit_type_delete.aspx.designer.cs">
+      <DependentUpon>edit_type_delete.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\edit\edit_type_edit.aspx.cs">
+      <DependentUpon>edit_type_edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\edit\edit_type_edit.aspx.designer.cs">
+      <DependentUpon>edit_type_edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\edit\ftb.imagegallery.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\edit\ftb.imagegallery.designer.cs">
+      <DependentUpon>ftb.imagegallery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="admin\ftb.imagegallery.aspx.cs">
+      <DependentUpon>ftb.imagegallery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\ftb.imagegallery.aspx.designer.cs">
+      <DependentUpon>ftb.imagegallery.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\login.aspx.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\login.aspx.designer.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\page\page_add.aspx.cs">
+      <DependentUpon>page_add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\page\page_add.aspx.designer.cs">
+      <DependentUpon>page_add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\page\page_edit.aspx.cs">
+      <DependentUpon>page_edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\page\page_edit.aspx.designer.cs">
+      <DependentUpon>page_edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\photo\admin_photo.aspx.cs">
+      <DependentUpon>admin_photo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\photo\admin_photo.aspx.designer.cs">
+      <DependentUpon>admin_photo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\photo\admin_photo_delete.aspx.cs">
+      <DependentUpon>admin_photo_delete.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\photo\admin_photo_delete.aspx.designer.cs">
+      <DependentUpon>admin_photo_delete.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\photo\admin_photo_edit.aspx.cs">
+      <DependentUpon>admin_photo_edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\photo\admin_photo_edit.aspx.designer.cs">
+      <DependentUpon>admin_photo_edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\photo\photo_add.aspx.cs">
+      <DependentUpon>photo_add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\photo\photo_add.aspx.designer.cs">
+      <DependentUpon>photo_add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\photo\photo_add_type.aspx.cs">
+      <DependentUpon>photo_add_type.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\photo\photo_add_type.aspx.designer.cs">
+      <DependentUpon>photo_add_type.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\photo\photo_edit_type.aspx.cs">
+      <DependentUpon>photo_edit_type.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\photo\photo_edit_type.aspx.designer.cs">
+      <DependentUpon>photo_edit_type.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\photo\photo_type_delete.aspx.cs">
+      <DependentUpon>photo_type_delete.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\photo\photo_type_delete.aspx.designer.cs">
+      <DependentUpon>photo_type_delete.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\photo\photo_type_edit.aspx.cs">
+      <DependentUpon>photo_type_edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\photo\photo_type_edit.aspx.designer.cs">
+      <DependentUpon>photo_type_edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\db.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ascx\about.ascx.cs">
+      <DependentUpon>about.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ascx\about.ascx.designer.cs">
+      <DependentUpon>about.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ascx\count.ascx.cs">
+      <DependentUpon>count.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ascx\count.ascx.designer.cs">
+      <DependentUpon>count.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ascx\edit_show.ascx.cs">
+      <DependentUpon>edit_show.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ascx\edit_show.ascx.designer.cs">
+      <DependentUpon>edit_show.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ascx\edit_type.ascx.cs">
+      <DependentUpon>edit_type.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ascx\edit_type.ascx.designer.cs">
+      <DependentUpon>edit_type.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ascx\edit_wz.ascx.cs">
+      <DependentUpon>edit_wz.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ascx\edit_wz.ascx.designer.cs">
+      <DependentUpon>edit_wz.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ascx\footer.ascx.cs">
+      <DependentUpon>footer.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ascx\footer.ascx.designer.cs">
+      <DependentUpon>footer.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ascx\guest.ascx.cs">
+      <DependentUpon>guest.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ascx\guest.ascx.designer.cs">
+      <DependentUpon>guest.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ascx\guest_post.ascx.cs">
+      <DependentUpon>guest_post.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ascx\guest_post.ascx.designer.cs">
+      <DependentUpon>guest_post.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ascx\newshow.ascx.cs">
+      <DependentUpon>newshow.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ascx\newshow.ascx.designer.cs">
+      <DependentUpon>newshow.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ascx\photo_show.ascx.cs">
+      <DependentUpon>photo_show.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ascx\photo_show.ascx.designer.cs">
+      <DependentUpon>photo_show.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ascx\photo_title.ascx.cs">
+      <DependentUpon>photo_title.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ascx\photo_title.ascx.designer.cs">
+      <DependentUpon>photo_title.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ascx\photo_type.ascx.cs">
+      <DependentUpon>photo_type.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ascx\photo_type.ascx.designer.cs">
+      <DependentUpon>photo_type.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ascx\selectpage.ascx.cs">
+      <DependentUpon>selectpage.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ascx\selectpage.ascx.designer.cs">
+      <DependentUpon>selectpage.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ascx\selete_title.ascx.cs">
+      <DependentUpon>selete_title.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ascx\selete_title.ascx.designer.cs">
+      <DependentUpon>selete_title.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ascx\time.ascx.cs">
+      <DependentUpon>time.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ascx\time.ascx.designer.cs">
+      <DependentUpon>time.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="edit.aspx.cs">
+      <DependentUpon>edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="edit.aspx.designer.cs">
+      <DependentUpon>edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="edit_show.aspx.cs">
+      <DependentUpon>edit_show.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="edit_show.aspx.designer.cs">
+      <DependentUpon>edit_show.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="error.aspx.cs">
+      <DependentUpon>error.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="error.aspx.designer.cs">
+      <DependentUpon>error.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="guest.aspx.cs">
+      <DependentUpon>guest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="guest.aspx.designer.cs">
+      <DependentUpon>guest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="guest_add.aspx.cs">
+      <DependentUpon>guest_add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="guest_add.aspx.designer.cs">
+      <DependentUpon>guest_add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="photo.aspx.cs">
+      <DependentUpon>photo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="photo.aspx.designer.cs">
+      <DependentUpon>photo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="sc.aspx.cs">
+      <DependentUpon>sc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sc.aspx.designer.cs">
+      <DependentUpon>sc.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="admin\edit\ftb.imagegallery" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:52613/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
